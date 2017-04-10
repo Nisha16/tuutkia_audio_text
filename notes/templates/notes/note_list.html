@@ -6,14 +6,23 @@
     </head>
     <body>
         <div class="container">
-            <h3>User's notes list</h3>
+            <h1>User's notes list</h1>
         </div>
         <div class="container">
             <div class="row">
                 <p>created on 04.10.2017, 12:14 </p>
                 <p>I am adding new note.</p>
             </div>
-
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                {% for note in notes %}
+                    <p>Created: {{ note.created_date }}</p>
+                    <h3>{{ note.user }}</h3>
+                    <p>{{ note.notes|linebreaksbr }}</p>
+                {% endfor %}
+            </div>
         </div>
     </body>
 </html>
